@@ -3,14 +3,18 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ output extension="Base.cs" #>
-<#@ include file="HanderBase.t4"#>
+<#@ output extension="Handler.cs" #>
+<#@ include file="$(t4IncludeFolder)HanderBase.t4"#>
 <#
    var modelName = "Ping";
    var returnType = "String";
    var nameSpaces = new List<string>(){"ClassLibrary1"};
    GenerateHandler(modelName, returnType,  nameSpacesToInclude: nameSpaces ); // defined in HanderBase.t4
 #>
+
+
+
+
 
 
 

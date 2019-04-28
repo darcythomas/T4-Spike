@@ -14,7 +14,7 @@
   <ItemGroup>
     <None Update="Ping.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Ping.Base.cs</LastGenOutput>
+      <LastGenOutput>Ping.Handler.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -23,11 +23,24 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Ping.Base.cs">
+    <Compile Update="Ping.Handler.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Ping.tt</DependentUpon>
     </Compile>
   </ItemGroup>
+
+
+<PropertyGroup>
+    <t4IncludeFolder>$(MSBuildProjectDirectory)\</t4IncludeFolder>
+</PropertyGroup>
+
+<!-- Tell the MSBuild T4 task to make the property available: -->
+<ItemGroup>
+    <T4ParameterValues Include="t4IncludeFolder">
+      <Value>$(t4IncludeFolder)</Value>
+    </T4ParameterValues>
+  </ItemGroup>
+
 
 </Project>
